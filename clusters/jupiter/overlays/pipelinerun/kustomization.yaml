@@ -1,0 +1,28 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: product-catalog-cicd
+
+resources:
+- github.com/gnunn-gitops/product-catalog/components/tekton/pipelineruns/client/base
+- github.com/gnunn-gitops/product-catalog/components/tekton/pipelineruns/server/base
+
+patches:
+- target:
+    kind: PipelineRun
+  patch: |-
+    - op: add
+      path: /spec/params/-
+      value:
+        name: cluster
+        value: jupiter
+    - op: add
+      path: /spec/params/-
+      value:
+        name: acs-secret
+        value: roxsecrets
+    - op: add
+      path: /spec/params/-
+      value:
+        name: acs_central_host
+        value: central-stackrox.apps.jupiter.8236.sandbox633.opentlc.com  
