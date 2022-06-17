@@ -10,6 +10,24 @@ resources:
 patches:
 - target:
     kind: PipelineRun
+    name: server
+  patch: |-
+    - op: add
+      path: /spec/params/-
+      value:
+        name: image_dest_url
+        value: quay.io/rhtevan/server
+- target:
+    kind: PipelineRun
+    name: client
+  patch: |-
+    - op: add
+      path: /spec/params/-
+      value:
+        name: image_dest_url
+        value: quay.io/rhtevan/client
+- target:
+    kind: PipelineRun
   patch: |-
     - op: add
       path: /spec/params/-
@@ -26,3 +44,12 @@ patches:
       value:
         name: acs_central_host
         value: central-stackrox.apps.jupiter.8236.sandbox633.opentlc.com  
+    - op: add
+      path: /spec/params/-
+      value:
+        name: gitops_git_url
+        value: https://github.com/rhtevan/product-catalog-jupiter
+   
+
+
+
