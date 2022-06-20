@@ -9,5 +9,8 @@ images:
 - name: quay.io/rhtevan/client
   newName: quay.io/rhtevan/client
   newTag: b8a2b2a-2569015949
+- name: quay.io/rhtevan/server
+  newName: quay.io/rhtevan/server
+  newTag: 7f192d4-419744528
 resources:
 - github.com/gnunn-gitops/product-catalog/environments/overlays/test
