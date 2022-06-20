@@ -3,10 +3,8 @@ kind: Kustomization
 
 images:
 - name: quay.io/gnunn/client
-  newName: quay.io/gnunn/client
-  newTag: b8a2b2a-3297279679
+  newName: quay.io/rhtevan/client
 - name: quay.io/gnunn/server
-  newName: quay.io/gnunn/server
-  newTag: 7f192d4-3240137032
+  newName: quay.io/rhtevan/server
 resources:
 - github.com/gnunn-gitops/product-catalog/environments/overlays/test
