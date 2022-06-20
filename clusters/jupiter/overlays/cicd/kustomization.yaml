@@ -8,6 +8,9 @@ resources:
 - pipeline-rolebinding.yaml
 - argocd-env-cm.yaml
 
+patchesStrategicMerge:
+- delete-slack-sealed-secret.yaml
+
 patches:
 - target:
     kind: BuildConfig
