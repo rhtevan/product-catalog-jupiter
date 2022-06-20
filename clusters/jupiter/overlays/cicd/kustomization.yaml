@@ -10,6 +10,20 @@ resources:
 
 patches:
 - target:
+    kind: BuildConfig
+    name: client
+  patch: |-
+    - op: replace
+      path: /spec/output/to/name
+      value: "quay.io/rhtevan/client:latest"
+- target:
+    kind: BuildConfig
+    name: server
+  patch: |-
+    - op: replace
+      path: /spec/output/to/name
+      value: "quay.io/rhtevan/server:latest"
+- target:
     kind: TriggerTemplate
     name: server
   patch: |-

@@ -49,7 +49,3 @@ patches:
       value:
         name: gitops_git_url
         value: https://github.com/rhtevan/product-catalog-jupiter
-   
-
-
-
